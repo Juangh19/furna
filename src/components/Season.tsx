@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { items } from '../data/products';
 import { ProductCard } from './ProductCard';
+import { Product } from '../reducers/cart';
 
-type SeasonProduct = {
-	description: string;
-	price: number;
-	img: string;
+type SeasonProduct = Product & {
+	seasonal: true;
 };
 
 export function Season() {
@@ -26,13 +25,7 @@ export function Season() {
 
 				<div className='grid justify-center gap-4 min-[540px]:grid-cols-2 sm:justify-normal  md:grid-cols-3 mb-8'>
 					{seasonProducts.map((product) => {
-						return (
-							<ProductCard
-								description={product.description}
-								price={product.price}
-								img={product.img}
-							/>
-						);
+						return <ProductCard key={product.id} product={product} />;
 					})}
 				</div>
 				<div className='mx-auto w-fit'>

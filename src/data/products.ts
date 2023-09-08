@@ -58,23 +58,9 @@ import MatLamp1 from '../assets/images/products/otherProducts/mat1.webp';
 import MatLamp2 from '../assets/images/products/otherProducts/mat2.webp';
 import Comfy1 from '../assets/images/products/otherProducts/comfy1.webp';
 import Comfy2 from '../assets/images/products/otherProducts/comfy2.webp';
+import { Product } from '../reducers/cart';
 
-interface Item {
-	id: number;
-	category: string;
-	img: string;
-	description: string;
-	price: number;
-	otherImgs: string[];
-	specs: string;
-	texture: string;
-	weight: string;
-	size: string;
-	trending?: boolean;
-	seasonal?: boolean;
-}
-
-export const items: Item[] = [
+export const items: Product[] = [
 	{
 		id: 1,
 		category: 'chair',

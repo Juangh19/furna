@@ -1,11 +1,9 @@
 import { ProductCard } from './ProductCard';
 import { useState, useEffect } from 'react';
 import { items } from '../data/products';
+import { Product } from '../reducers/cart';
 
-type TrendingProduct = {
-	description: string;
-	price: number;
-	img: string;
+type TrendingProduct = Product & {
 	trending: true;
 };
 
@@ -29,13 +27,7 @@ export function Trending() {
 				<div className='w-full overflow-hidden overflow-x-auto'>
 					<div className='flex justify-between gap-4 min-w-[40rem]'>
 						{trendingProducts.map((product) => {
-							return (
-								<ProductCard
-									description={product.description}
-									price={product.price}
-									img={product.img}
-								/>
-							);
+							return <ProductCard key={product.id} product={product} />;
 						})}
 					</div>
 				</div>
