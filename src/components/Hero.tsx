@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import HeroImg from '../assets/images/HeroImg.png';
 
 export function Hero() {
@@ -11,12 +12,12 @@ export function Hero() {
 					<p className=''>
 						Customer satisfaction speaks for itself with 2000+ reviews
 					</p>
-					<a
-						href=''
+					<Link
+						to='/products'
 						className='p-3 text-white rounded bg-gold w-fit hover:opacity-70 '
 					>
 						Explore Products
-					</a>
+					</Link>
 				</div>
 				<div className='flex items-center justify-center flex-1 border '>
 					<div className='relative w-4/6 p-6'>

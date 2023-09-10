@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/cart';
 import { Product } from '../reducers/cart';
 
@@ -13,15 +14,15 @@ export function ProductCard({ product }: ProductCardProps) {
 	const itemInCart = cartItems.find((item) => item.id === product.id);
 
 	return (
-		<div className='flex flex-1 flex-col gap-2 px-6 py-4 border rounded-lg border-gold border-opacity-50 min-w-[14rem] items-center max-w-xs relative  '>
+		<div className='flex flex-1 flex-col gap-2 px-6 py-4 border rounded-lg border-gold border-opacity-40 min-w-[14rem] items-center max-w-xs relative  '>
 			{itemInCart && (
 				<div className='absolute grid w-6 h-6 bg-red-500 rounded-full right-1 top-1 rotate-[5deg] place-items-center'>
 					<span className='text-white'>{itemInCart.quantity}</span>
 				</div>
 			)}
-			<a href=''>
+			<Link to={`/products/${product.id}`}>
 				<img className='w-full max-w-[11.5rem]  ' src={img} alt={description} />
-			</a>
+			</Link>
 			<div className='w-full'>
 				<a href=''>
 					<span className='font-semibold '>
@@ -42,17 +43,17 @@ export function ProductCard({ product }: ProductCardProps) {
 					<div className='flex gap-5 text-2xl text-gold'>
 						<i
 							onClick={() => addToCart(product)}
-							className='cursor-pointer fa-solid fa-cart-plus opacity-80 hover:opacity-100'
+							className='cursor-pointer fa-solid fa-cart-plus opacity-90 hover:opacity-100'
 						></i>
 						<i
 							onClick={() => decreaseQuantity(product)}
-							className='cursor-pointer fa-solid fa-cart-arrow-down opacity-80 hover:opacity-100'
+							className='cursor-pointer fa-solid fa-cart-arrow-down opacity-90 hover:opacity-100'
 						></i>
 					</div>
 				) : (
 					<button
 						onClick={() => addToCart(product)}
-						className='p-3 text-xs text-white rounded-md hover:opacity-75 bg-gold'
+						className='p-3 text-xs text-white rounded-md hover:opacity-90 bg-gold'
 					>
 						Add to cart
 					</button>

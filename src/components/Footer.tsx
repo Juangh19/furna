@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Footer() {
 	return (
 		<footer className='px-12 py-12 text-white bg-darkText'>
@@ -19,12 +21,12 @@ export function Footer() {
 				</div>
 			</div>
 			<div className='flex justify-center gap-4 mx-auto mt-2 mb-4'>
-				<a href='' className='opacity-80 hover:opacity-100'>
+				<Link to='/' className='opacity-80 hover:opacity-100'>
 					Home
-				</a>
-				<a href='' className='opacity-80 hover:opacity-100'>
+				</Link>
+				<Link to='/products' className='opacity-80 hover:opacity-100'>
 					Products
-				</a>
+				</Link>
 				<a href='' className='opacity-80 hover:opacity-100'>
 					About
 				</a>

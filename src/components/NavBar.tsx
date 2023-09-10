@@ -2,28 +2,30 @@ import { useCart } from '../context/cart';
 import { CartIcon } from '../icons/Icons';
 import { useState } from 'react';
 import { Cart } from './Cart';
+import { Link } from 'react-router-dom';
 
 export function NavBar() {
 	const { cartItems } = useCart();
 
 	const [showCart, setShowCart] = useState(false);
-	console.log(showCart);
 
 	return (
 		<header className='overflow-hidden bg-[#fcfcfc] border-b border-b-[#e9e9e9] text-darkText sticky top-0 z-50'>
 			<section className='flex items-center justify-between max-w-4xl px-8 py-4 mx-auto '>
 				<div className='text-2xl font-bold'>
-					<h2>
-						Furna<span className='text-gold '>.</span>
-					</h2>
+					<Link to='/'>
+						<h2>
+							Furna<span className='text-gold '>.</span>
+						</h2>
+					</Link>
 				</div>
 				<div className='flex gap-6 text-[1rem]'>
-					<a href='' className=' hover:opacity-75'>
+					<Link to='/' className=' hover:opacity-75'>
 						Home
-					</a>
-					<a href='' className=' hover:opacity-75'>
+					</Link>
+					<Link to='products' className=' hover:opacity-75'>
 						Products
-					</a>
+					</Link>
 					<a href='' className=' hover:opacity-75'>
 						About
 					</a>

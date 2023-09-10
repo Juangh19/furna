@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ShopBannerImg from '../assets/images/ShopBannerImg.png';
 
 export function ShopBanner() {
@@ -13,12 +14,12 @@ export function ShopBanner() {
 						Explore our curated selection of exquisite furniture pieces,
 						designed to enhance your living
 					</p>
-					<a
-						href=''
+					<Link
+						to='/products'
 						className=' bg-darkText w-fit text-[#fcfcfc] p-3 hover:text-darkText hover:bg-transparent hover:outline-darkText hover:outline    '
 					>
 						SHOP NOW
-					</a>
+					</Link>
 				</div>
 				<div className=''>
 					<div className='relative w-full bg-[rgba(95,79,48,0.30)] '>

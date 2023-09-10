@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { items } from '../data/products';
 import { ProductCard } from './ProductCard';
 import { Product } from '../reducers/cart';
+import { Link } from 'react-router-dom';
 
 type SeasonProduct = Product & {
 	seasonal: true;
@@ -29,12 +30,12 @@ export function Season() {
 					})}
 				</div>
 				<div className='mx-auto w-fit'>
-					<a
-						href=''
+					<Link
+						to='/products'
 						className='p-2 text-xl font-semibold border rounded border-gold text-gold'
 					>
 						View all
-					</a>
+					</Link>
 				</div>
 			</section>
 		</div>

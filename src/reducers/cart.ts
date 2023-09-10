@@ -26,7 +26,7 @@ export enum CartActionTypes {
 
 type CartAction =
 	| { type: CartActionTypes.DECREASE_FROM_CART; payload: Product }
-	| { type: CartActionTypes.ADD_TO_CART; payload: Product }
+	| { type: CartActionTypes.ADD_TO_CART; payload: Product; quantity?: number }
 	| { type: CartActionTypes.CLEAR_CART }
 	| { type: CartActionTypes.REMOVE_FROM_CART; payload: Product };
 
@@ -37,12 +37,21 @@ export const cartReducer = (state: Product[], action: CartAction) => {
 
 			if (existingItem) {
 				return state.map((item) => {
-					return item.id === action.payload.id
-						? { ...item, quantity: (item.quantity || 0) + 1 }
-						: item;
+					if (item.id === action.payload.id) {
+						if (action.quantity) {
+							return { ...item, quantity: action.quantity };
+						} else {
+							return { ...item, quantity: (item.quantity || 1) + 1 };
+						}
+					} else {
+						return item;
+					}
 				});
 			} else {
-				return [...state, { ...action.payload, quantity: 1 }];
+				return [
+					...state,
+					{ ...action.payload, quantity: action.quantity || 1 },
+				];
 			}
 
 		case CartActionTypes.DECREASE_FROM_CART:

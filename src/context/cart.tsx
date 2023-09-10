@@ -14,7 +14,7 @@ type CartContextProviderProps = {
 
 type CartContextType = {
 	cartItems: Product[];
-	addToCart: (product: Product) => void;
+	addToCart: (product: Product, quantity?: number) => void;
 	decreaseQuantity: (product: Product) => void;
 	removeFromCart: (product: Product) => void;
 	clearCart: () => void;
@@ -27,8 +27,12 @@ export default function CartContextProvider({
 }: CartContextProviderProps) {
 	const [cartItems, dispatch] = useReducer(cartReducer, initialCartState);
 
-	const addToCart = (product: Product) => {
-		dispatch({ type: CartActionTypes.ADD_TO_CART, payload: product });
+	const addToCart = (product: Product, quantity?: number) => {
+		dispatch({
+			type: CartActionTypes.ADD_TO_CART,
+			payload: product,
+			quantity: quantity,
+		});
 	};
 
 	const decreaseQuantity = (product: Product) => {
