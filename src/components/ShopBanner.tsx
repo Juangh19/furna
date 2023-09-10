@@ -5,7 +5,7 @@ export function ShopBanner() {
 	return (
 		<div className='w-full bg-[#e9e9e9]'>
 			<section className='flex items-center justify-between max-w-4xl gap-12 px-8 py-16 mx-auto'>
-				<div className='flex flex-col gap-4 basis-7/12'>
+				<div className='flex flex-col gap-4 min-[540px]:basis-7/12'>
 					<h2 className='text-4xl font-semibold'>
 						{' '}
 						Furniture that blends creativity with serenity
@@ -21,7 +21,7 @@ export function ShopBanner() {
 						SHOP NOW
 					</Link>
 				</div>
-				<div className=''>
+				<div className='hidden min-[540px]:block'>
 					<div className='relative w-full bg-[rgba(95,79,48,0.30)] '>
 						<img
 							src={ShopBannerImg}

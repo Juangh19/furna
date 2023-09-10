@@ -6,10 +6,10 @@ export function About() {
 		<>
 			<div className='flex-1 w-full pt-20 pb-12 bg-[#e9e9e9]'>
 				<section className='relative flex items-center justify-center max-w-4xl gap-4 px-8 mx-auto '>
-					<h1 className='absolute text-6xl font-semibold left-[40%] -top-10'>
+					<h1 className='absolute min-w-max left-1/2 -translate-x-1/2 text-5xl sm:text-6xl  font-semibold sm:translate-x-0 sm:left-[35%] -top-10'>
 						ABOUT US
 					</h1>
-					<div className='flex-1 '>
+					<div className='flex-1 hidden sm:block '>
 						<img src={AboutImg} alt='' />
 					</div>
 					<div className='flex flex-col justify-center flex-1 pt-8 pl-8'>

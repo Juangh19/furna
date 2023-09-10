@@ -5,7 +5,7 @@ export function Hero() {
 	return (
 		<div className='w-full bg-[#e9e9e9]'>
 			<section className='flex max-w-4xl px-8 py-16 mx-auto'>
-				<div className='flex flex-col justify-center flex-1 gap-6'>
+				<div className='flex flex-col items-center justify-center flex-1 gap-6 text-center sm:items-start sm:text-left'>
 					<h1 className='text-5xl font-bold text-gold'>
 						Discover Comfort & Elegance
 					</h1>
@@ -19,7 +19,7 @@ export function Hero() {
 						Explore Products
 					</Link>
 				</div>
-				<div className='flex items-center justify-center flex-1 border '>
+				<div className='items-center justify-center flex-1 hidden border sm:flex '>
 					<div className='relative w-4/6 p-6'>
 						<div className=' bg-[rgba(95,79,48,0.40)] rounded-full aspect-square '>
 							<img
