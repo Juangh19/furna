@@ -2,7 +2,7 @@ import { useCart } from '../context/cart';
 import { CartIcon } from '../icons/Icons';
 import { useState } from 'react';
 import { Cart } from './Cart';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export function NavBar() {
 	const { cartItems } = useCart();
@@ -20,18 +20,38 @@ export function NavBar() {
 					</Link>
 				</div>
 				<div className='flex gap-6 text-[1rem]'>
-					<Link to='/' className=' hover:opacity-75'>
+					<NavLink
+						to='/'
+						className={({ isActive, isPending }) =>
+							isPending ? 'hover:opacity-70' : isActive ? 'font-semibold' : ''
+						}
+					>
 						Home
-					</Link>
-					<Link to='products' className=' hover:opacity-75'>
+					</NavLink>
+					<NavLink
+						to='products'
+						className={({ isActive, isPending }) =>
+							isPending ? 'hover:opacity-70' : isActive ? 'font-semibold' : ''
+						}
+					>
 						Products
-					</Link>
-					<a href='' className=' hover:opacity-75'>
+					</NavLink>
+					<NavLink
+						to='about'
+						className={({ isActive, isPending }) =>
+							isPending ? 'hover:opacity-70' : isActive ? 'font-semibold' : ''
+						}
+					>
 						About
-					</a>
-					<a href='' className=' hover:opacity-75'>
+					</NavLink>
+					<NavLink
+						to='contact'
+						className={({ isActive, isPending }) =>
+							isPending ? 'hover:opacity-70' : isActive ? 'font-semibold' : ''
+						}
+					>
 						Contact
-					</a>
+					</NavLink>
 				</div>
 				<div
 					className='relative w-6 h-6 cursor-pointer '

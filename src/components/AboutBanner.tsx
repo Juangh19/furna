@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import AboutBannerImg from '../assets/images/AboutBannerImg.png';
 
 export function AboutBanner() {
@@ -10,10 +11,10 @@ export function AboutBanner() {
 						Our history embodies expert craftsmanship and a passion for creating
 						unique furniture stories.
 					</p>
-					<a href='' className=' text-gold'>
+					<Link to='/about' className=' text-gold'>
 						<span className='mr-1 underline'>More about us</span>
 						<i className='text-xs fa-solid fa-up-right-from-square'></i>
-					</a>
+					</Link>
 				</div>
 				<div className=''>
 					<div className='relative w-full bg-[rgba(95,79,48,0.30)] '>

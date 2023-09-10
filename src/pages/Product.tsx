@@ -24,7 +24,7 @@ export function Product() {
 
 	return (
 		<>
-			{product && (
+			{product ? (
 				<div className=' flex-1 bg-[#e9e9e9] w-full text-darkText'>
 					<section className='flex items-center justify-center max-w-4xl px-8 py-16 mx-auto '>
 						<div className='flex flex-col items-center flex-1 '>
@@ -120,6 +120,12 @@ export function Product() {
 							</div>
 						</div>
 					</section>
+				</div>
+			) : (
+				<div className='flex-1 text-center py-52'>
+					<h2 className='text-6xl font-semibold text-gold opacity-80'>
+						Product not found :(
+					</h2>
 				</div>
 			)}
 			<Trending />

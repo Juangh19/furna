@@ -1,5 +1,12 @@
 /* eslint-disable no-case-declarations */
-export const initialCartState: Product[] = [];
+
+type CartFromStorage = Product[] | null;
+
+const cartFromStorage: CartFromStorage = JSON.parse(
+	localStorage.getItem('cart') || '[]'
+);
+
+export const initialCartState: Product[] = cartFromStorage || [];
 
 export interface Product {
 	id: number;
@@ -36,7 +43,7 @@ export const cartReducer = (state: Product[], action: CartAction) => {
 			const existingItem = state.find((item) => item.id === action.payload.id);
 
 			if (existingItem) {
-				return state.map((item) => {
+				const updatedState = state.map((item) => {
 					if (item.id === action.payload.id) {
 						if (action.quantity) {
 							return { ...item, quantity: action.quantity };
@@ -47,11 +54,15 @@ export const cartReducer = (state: Product[], action: CartAction) => {
 						return item;
 					}
 				});
+				localStorage.setItem('cart', JSON.stringify(updatedState));
+				return updatedState;
 			} else {
-				return [
+				const updatedState = [
 					...state,
 					{ ...action.payload, quantity: action.quantity || 1 },
 				];
+				localStorage.setItem('cart', JSON.stringify(updatedState));
+				return updatedState;
 			}
 
 		case CartActionTypes.DECREASE_FROM_CART:
@@ -59,22 +70,33 @@ export const cartReducer = (state: Product[], action: CartAction) => {
 
 			if (existingItem2) {
 				if (existingItem2.quantity === 1) {
-					return state.filter((item) => item.id !== action.payload.id);
+					const updatedState = state.filter(
+						(item) => item.id !== action.payload.id
+					);
+					localStorage.setItem('cart', JSON.stringify(updatedState));
+					return updatedState;
 				} else {
-					return state.map((item) => {
+					const updatedState = state.map((item) => {
 						return item.id === action.payload.id
 							? { ...item, quantity: (item.quantity || 1) - 1 }
 							: item;
 					});
+					localStorage.setItem('cart', JSON.stringify(updatedState));
+					return updatedState;
 				}
 			} else {
 				return state;
 			}
 
 		case CartActionTypes.REMOVE_FROM_CART:
-			return state.filter((item) => item.id !== action.payload.id);
+			const updatedState = state.filter(
+				(item) => item.id !== action.payload.id
+			);
+			localStorage.setItem('cart', JSON.stringify(updatedState));
+			return updatedState;
 
 		case CartActionTypes.CLEAR_CART:
+			localStorage.setItem('cart', JSON.stringify([]));
 			return [];
 
 		default:

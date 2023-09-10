@@ -12,11 +12,16 @@ export function Newsletter() {
 				<div className='flex justify-end flex-1'>
 					<form action='' className='flex flex-col items-end w-full max-w-xs '>
 						<input
-							type='text'
+							type='email'
 							placeholder='Your email'
 							className='w-full p-2 font-semibold bg-transparent border-b outline-none text-slate-500 border-darkText'
 						/>
-						<button className='p-3 text-[#fcfcfc] bg-darkText w-fit'>
+						<button
+							onClick={(e) => {
+								e.preventDefault();
+							}}
+							className='p-3 text-[#fcfcfc] bg-darkText w-fit'
+						>
 							Subscribe
 						</button>
 					</form>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Newsletter } from '../components/Newsletter';
 import { items } from '../data/products';
-import { Product } from '../reducers/cart';
 import { ProductCard } from '../components/ProductCard';
 
 type category =
@@ -14,19 +13,24 @@ type category =
 	| null;
 
 export function Products() {
-	const [products, setProducts] = useState<Product[]>([]);
 	const [category, setCategory] = useState<category>(null);
 
 	useEffect(() => {
-		setProducts(items);
+		const savedCategory = JSON.parse(
+			localStorage.getItem('category') || 'null'
+		);
+		console.log(savedCategory);
+
+		setCategory(savedCategory);
 	}, []);
 
+	const filteredProducts = (category: category) =>
+		category === null
+			? items
+			: items.filter((item) => item.category === category);
+
 	useEffect(() => {
-		if (category === null) {
-			return setProducts(items);
-		}
-		const filteredProducts = items.filter((item) => item.category === category);
-		setProducts(filteredProducts);
+		localStorage.setItem('category', JSON.stringify(category));
 	}, [category]);
 
 	return (
@@ -122,7 +126,7 @@ export function Products() {
 					</div>
 					<hr className='mt-4 mb-6' />
 					<div className='grid justify-center gap-4 min-[540px]:grid-cols-2 sm:justify-normal  md:grid-cols-3 mb-8'>
-						{products.map((product) => {
+						{filteredProducts(category).map((product) => {
 							return <ProductCard key={product.id} product={product} />;
 						})}
 					</div>
