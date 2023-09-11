@@ -25,7 +25,7 @@ export function Hero() {
 							<img
 								className='absolute w-full -right-12 -top-12'
 								src={HeroImg}
-								alt=''
+								alt='White Armchair'
 							/>
 						</div>
 					</div>

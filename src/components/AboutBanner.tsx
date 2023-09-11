@@ -20,7 +20,7 @@ export function AboutBanner() {
 					<div className='relative w-full bg-[rgba(95,79,48,0.30)] '>
 						<img
 							src={AboutBannerImg}
-							alt=''
+							alt='Furniture craftmanship'
 							className='relative w-full top-6 left-6'
 						/>
 					</div>

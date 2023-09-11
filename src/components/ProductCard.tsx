@@ -24,13 +24,13 @@ export function ProductCard({ product }: ProductCardProps) {
 				<img className='w-full max-w-[11.5rem]  ' src={img} alt={description} />
 			</Link>
 			<div className='w-full'>
-				<a href=''>
+				<Link to={`/products/${product.id}`}>
 					<span className='font-semibold '>
 						{description.length < 18
 							? description
 							: description.slice(0, 18) + '...'}
 					</span>
-				</a>
+				</Link>
 			</div>
 			<div className='flex items-center justify-between w-full h-10 gap-2 '>
 				<span className='font-bold'>

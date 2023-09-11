@@ -78,7 +78,11 @@ export function Product() {
 							</div>
 							<div className='flex flex-col items-center flex-1 mb-6 sm:hidden '>
 								<div className='max-w-[16rem] bg-[#fcfcfc]  '>
-									<img className='w-full aspect-square ' src={mainImg} alt='' />
+									<img
+										className='w-full aspect-square '
+										src={mainImg}
+										alt={product.description}
+									/>
 								</div>
 								<div className='flex gap-4 mt-4 '>
 									<div
@@ -88,7 +92,7 @@ export function Product() {
 										<img
 											className='object-cover w-full h-full'
 											src={product?.img}
-											alt=''
+											alt={product.description}
 										/>
 									</div>
 									<div
@@ -98,7 +102,7 @@ export function Product() {
 										<img
 											className='object-cover w-full h-full'
 											src={product?.otherImgs[0]}
-											alt=''
+											alt={product.description}
 										/>
 									</div>
 									<div
@@ -108,7 +112,7 @@ export function Product() {
 										<img
 											className='object-cover w-full h-full'
 											src={product?.otherImgs[1]}
-											alt=''
+											alt={product.description}
 										/>
 									</div>
 								</div>

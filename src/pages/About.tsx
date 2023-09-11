@@ -10,7 +10,7 @@ export function About() {
 						ABOUT US
 					</h1>
 					<div className='flex-1 hidden sm:block '>
-						<img src={AboutImg} alt='' />
+						<img src={AboutImg} alt='Business meeting' />
 					</div>
 					<div className='flex flex-col justify-center flex-1 pt-8 pl-8'>
 						<p className='text-xs font-semibold opacity-70 after:content-[""] after:absolute after:bg-[#141414] after:w-20 after:h-2 after:-bottom-6 after:right-8'>

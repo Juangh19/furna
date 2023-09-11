@@ -25,7 +25,7 @@ export function ShopBanner() {
 					<div className='relative w-full bg-[rgba(95,79,48,0.30)] '>
 						<img
 							src={ShopBannerImg}
-							alt=''
+							alt='Home Decor'
 							className='relative w-full -top-6 -left-6'
 						/>
 					</div>
