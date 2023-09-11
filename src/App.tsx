@@ -12,7 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 	return (
-		<div className='min-h-[100svh] flex  flex-col'>
+		<div className='min-h-[100svh] bg-[#fff] flex  flex-col'>
 			<CartContextProvider>
 				<NavBar />
 				<Routes>
