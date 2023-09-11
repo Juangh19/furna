@@ -20,13 +20,13 @@ export function Cart({
 			{showCart && (
 				<div
 					onClick={() => setShowCart(false)}
-					className=' fixed top-0 w-full h-[100svh] bg-[#222] bg-opacity-60'
+					className=' fixed top-0 w-full h-screen bg-[#222] bg-opacity-60'
 				></div>
 			)}
 			<div
 				className={` ${
 					showCart ? 'translate-x-0' : 'translate-x-full'
-				} fixed transform transition-transform duration-200 ease-out  top-0 right-0 w-[320px] h-[100svh] bg-[#fcfcfc] `}
+				} fixed transform transition-transform duration-200 ease-out  top-0 right-0 w-[320px] h-[100dvh]  bg-[#fcfcfc] `}
 			>
 				<div className='flex flex-col h-full p-6 mx-auto'>
 					<div className='flex items-center justify-between pr-2 mb-2'>
