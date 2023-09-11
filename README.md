@@ -12,7 +12,6 @@ You can explore the live demo of our project by visiting [this link](https://jua
 - Elegant and modern design using Tailwind CSS.
 - Extensive catalog of furniture with detailed information.
 - Shopping cart for adding and managing products.
-- Simple and secure checkout process.
 
 ## Screenshots
 
